@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% for comm in comments %}
+<div class="container">
+User:{{comm.user}}
+    <hr><p>Comment:{{comm.text}}</p>
+{%endfor%}
+<form action="" method="post">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit">Send</button>
+</form>
+</div>
+{%endblock%}

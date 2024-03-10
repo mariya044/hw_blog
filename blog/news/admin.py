@@ -1,5 +1,5 @@
 from django.contrib import admin
-from news.models import Post
+from news.models import Post,Comments
 
 
 class PostModelAdmin(admin.ModelAdmin):
@@ -8,4 +8,10 @@ class PostModelAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostModelAdmin)
 
+
 # Register your models here.
+class CommentsModelAdmin(admin.ModelAdmin):
+    list_display = ["user", "post", "text"]
+
+
+admin.site.register(Comments, CommentsModelAdmin)

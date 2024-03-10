@@ -7,6 +7,11 @@
             <h3>{{post.title}}</h3>
             <h1>{{post.text}}</h1>
             <p>{{post.created_at}} by {{post.author}}</p>
-            {% endblock %}
         </div>
+    {% if user.is_authenticated %}
+    <h3><a href="{%url "comments" pk=post.id %}">Comments</a></h3>
+    {% endif %}
+    </div>
 </div>
+
+{% endblock %}
