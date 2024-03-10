@@ -10,8 +10,6 @@
             <p class="card-text mb-auto">{{post.text|truncatechars:100}}</p>
             {% if user.is_authenticated %}
             <a href="{% url "edit_post" post_id=post.id %}">Edit Post</a>
-            <div class="card">
-            </div>
            {% endif %}
             <div class="mb-1 text-body-secondary"><a href="{% url "posts" post_id=post.id %}">Read more..</a></div>
         </div>

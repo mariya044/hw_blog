@@ -62,7 +62,8 @@ def comments(request, pk):
             form.user = request.user
             form.post = post
             form.save()
-            return redirect("posts")
+
+
     else:
         form = CommentsForm()
     return render(request,"comments.html",{"post":post,"comments":comments,"form":form})
@@ -73,3 +74,4 @@ class PostDeleteView(DeleteView):
     model=Post
     success_url = "/post/"
     template_name="delete_post.html"
+

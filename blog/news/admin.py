@@ -3,7 +3,7 @@ from news.models import Post,Comments
 
 
 class PostModelAdmin(admin.ModelAdmin):
-    list_display = ["title", "author", "created_at","image"]
+    list_display = ["title", "author", "created_at"]
 
 
 admin.site.register(Post, PostModelAdmin)

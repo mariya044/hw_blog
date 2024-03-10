@@ -9,6 +9,7 @@ User:{{comm.user}}
 {% csrf_token %}
 {{form.as_p}}
 <button type="submit">Send</button>
+    <a href="{% url "posts" post_id=post.id %}">Back</a>
 </form>
 </div>
 {%endblock%}
