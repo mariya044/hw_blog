@@ -11,6 +11,7 @@ class Post(models.Model):
     author=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     created_at=models.DateTimeField(default=timezone.now)
     published_at=models.DateTimeField(blank=True,null=True)
+    image=models.ImageField(blank=True,upload_to="post_images")
     tags=TaggableManager()
 
     def __str__(self):
